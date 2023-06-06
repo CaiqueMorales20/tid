@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "tid",
+    "slug": "tid",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
