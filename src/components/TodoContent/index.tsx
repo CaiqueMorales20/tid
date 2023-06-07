@@ -10,6 +10,7 @@ import { TodoContentS } from "./style";
 // Context
 import { TodoContext } from "../../context/ContextComponent";
 import { TodoContextProps } from "../../context/types";
+import { TodoInput } from "../TodoInput";
 
 // Functional Component
 export const TodoContent = () => {
@@ -19,6 +20,7 @@ export const TodoContent = () => {
 	// Rendering
 	return (
 		<TodoContentS>
+			<TodoInput />
 			{todoList.map((item, index) => {
 				// Rendering
 				return <TodoItem name={item} key={index} />;
