@@ -21,9 +21,9 @@ export const TodoContent = () => {
 	return (
 		<TodoContentS>
 			<TodoInput />
-			{todoList.map((item, index) => {
+			{todoList.map((item) => {
 				// Rendering
-				return <TodoItem name={item} key={index} />;
+				return <TodoItem name={item.name} id={item.id} key={item.id} />;
 			})}
 		</TodoContentS>
 	);

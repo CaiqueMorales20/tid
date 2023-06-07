@@ -21,6 +21,10 @@ export const IconContainer = styled.View`
 	height: 100%;
 `;
 
+export const PressableS = styled.Pressable`
+	height: 20px;
+`;
+
 export const ImageS = styled.Image`
 	height: 100%;
 	width: 20px;

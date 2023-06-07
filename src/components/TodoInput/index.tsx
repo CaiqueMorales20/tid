@@ -1,5 +1,5 @@
 // Imports
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 // Styled Components
 import { InputIcon, InputS, TodoInputS } from "./style";
@@ -11,23 +11,18 @@ import { TodoContextProps } from "../../context/types";
 // Functional Component
 export const TodoInput = () => {
 	// Variables
-	const [inputText, setInputText] = useState("");
-	const { setTodoList } = useContext(TodoContext) as TodoContextProps;
-
-	// Functions
-	const addTask = () => {
-		setTodoList((prev: any) => [...prev, inputText]);
-		setInputText("");
-	};
+	const { inputText, setInputText, addTask } = useContext(
+		TodoContext
+	) as TodoContextProps;
 
 	// Rendering
 	return (
 		<TodoInputS>
 			<InputS
-				value={inputText}
-				onChangeText={(e: any) => setInputText(e)}
 				placeholder="Add a task..."
 				placeholderTextColor="#202124"
+				value={inputText}
+				onChangeText={(e: any) => setInputText(e)}
 				onSubmitEditing={() => addTask()}
 			/>
 			<InputIcon source={require("../../assets/icons/align.png")} />
