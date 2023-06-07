@@ -8,7 +8,6 @@ export const Container = styled.View`
 	justify-content: center;
 `;
 
-export const Text = styled.Text`
-	color: #202124;
-	font-size: 14px;
+export const Content = styled.View`
+	width: 80%;
 `;

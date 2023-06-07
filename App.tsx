@@ -2,14 +2,19 @@
 import { StatusBar } from "expo-status-bar";
 
 // Styled Components
-import { Container, Text } from "./App.style";
+import { Container, Content } from "./App.style";
+
+// Screens
+import { Todo } from "./src/screens/Todo/Todo";
 
 // Functional Component
 export default function App() {
 	return (
 		<Container>
 			<StatusBar style="auto" />
-			<Text>First IOS app</Text>
+			<Content>
+				<Todo />
+			</Content>
 		</Container>
 	);
 }
