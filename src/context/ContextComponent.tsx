@@ -10,10 +10,12 @@ export const TodoContext = createContext<TodoContextProps | null>(null);
 // Functional Component
 export const ContextComponent = ({ children }: ContextComponentProps) => {
 	// Variables
-	const [todoList, setTodoList] = useState(["Tarefa", "Tarefa 2"]);
+	const [todoList, setTodoList] = useState([]);
 
 	// Rendering
 	return (
-		<TodoContext.Provider value={{ todoList }}>{children}</TodoContext.Provider>
+		<TodoContext.Provider value={{ todoList, setTodoList }}>
+			{children}
+		</TodoContext.Provider>
 	);
 };

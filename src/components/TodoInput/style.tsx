@@ -14,7 +14,7 @@ export const TodoInputS = styled.View`
 export const InputS = styled.TextInput`
 	height: 100%;
 	width: 100%;
-	color: #fefefe;
+	color: #202124;
 	padding-left: 30px;
 	z-index: 2;
 `;
