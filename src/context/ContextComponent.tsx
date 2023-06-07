@@ -16,6 +16,7 @@ export const ContextComponent = ({ children }: ContextComponentProps) => {
 
 	// Functions
 	const addTask = () => {
+		if (inputText.length == 0) return;
 		setTodoList((prev: any) => [
 			...prev,
 			{ name: inputText, id: prevId == 0 ? 1 : prevId + 1 },
@@ -25,7 +26,6 @@ export const ContextComponent = ({ children }: ContextComponentProps) => {
 	};
 
 	const deleteTask = (idToDelete: number) => {
-		console.log(idToDelete);
 		setTodoList(
 			todoList.filter((item) => {
 				return item.id != idToDelete;

@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { TodoItem } from "../../components/TodoItem";
 
 // Styled Components
-import { TodoContentS } from "./style";
+import { TodoContentS, TodoListContent } from "./style";
 
 // Context
 import { TodoContext } from "../../context/ContextComponent";
@@ -21,10 +21,12 @@ export const TodoContent = () => {
 	return (
 		<TodoContentS>
 			<TodoInput />
-			{todoList.map((item) => {
-				// Rendering
-				return <TodoItem name={item.name} id={item.id} key={item.id} />;
-			})}
+			<TodoListContent>
+				{todoList.map((item) => {
+					// Rendering
+					return <TodoItem name={item.name} id={item.id} key={item.id} />;
+				})}
+			</TodoListContent>
 		</TodoContentS>
 	);
 };
