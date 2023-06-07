@@ -9,5 +9,8 @@ export const Container = styled.View`
 `;
 
 export const Content = styled.View`
-	width: 80%;
+	width: 95%;
+	height: 80%;
+	justify-content: center;
+	align-items: center;
 `;
