@@ -21,6 +21,7 @@ export const TodoItem = (props: TodoItemProps) => {
 		<ViewS>
 			<TextS>{props.name}</TextS>
 			<IconContainer>
+				<ImageS source={require("../../assets/icons/edit.png")} />
 				<PressableS onPress={() => deleteTask(props.id)}>
 					<ImageS source={require("../../assets/icons/delete.png")} />
 				</PressableS>

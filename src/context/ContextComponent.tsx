@@ -1,5 +1,5 @@
 // Imports
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 // Types
 import { ContextComponentProps, TodoContextProps } from "./types";
