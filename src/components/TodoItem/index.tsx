@@ -14,14 +14,18 @@ import { TodoContextProps } from "../../context/types";
 // Functional Component
 export const TodoItem = (props: TodoItemProps) => {
 	// Variables
-	const { deleteTask } = useContext(TodoContext) as TodoContextProps;
+	const { deleteTask, updateTask } = useContext(
+		TodoContext
+	) as TodoContextProps;
 
 	// Rendering
 	return (
 		<ViewS>
 			<TextS>{props.name}</TextS>
 			<IconContainer>
-				<ImageS source={require("../../assets/icons/edit.png")} />
+				<PressableS onPress={() => updateTask(props.id)}>
+					<ImageS source={require("../../assets/icons/edit.png")} />
+				</PressableS>
 				<PressableS onPress={() => deleteTask(props.id)}>
 					<ImageS source={require("../../assets/icons/delete.png")} />
 				</PressableS>

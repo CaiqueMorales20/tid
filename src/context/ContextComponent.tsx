@@ -33,6 +33,16 @@ export const ContextComponent = ({ children }: ContextComponentProps) => {
 		);
 	};
 
+	const updateTask = (idToUpdate: number) => {
+		setTodoList(
+			todoList.map((item) => {
+				if (item.id === idToUpdate) {
+					return { ...item, name: "teste" };
+				}
+			})
+		);
+	};
+
 	// Rendering
 	return (
 		<TodoContext.Provider
@@ -43,6 +53,7 @@ export const ContextComponent = ({ children }: ContextComponentProps) => {
 				setInputText,
 				addTask,
 				deleteTask,
+				updateTask,
 			}}
 		>
 			{children}
