@@ -6,7 +6,7 @@ export type TodoContextProps = {
 	setInputText: (value: string) => void;
 	addTask: () => void;
 	deleteTask: (idToDelete: number) => void;
-	updateTask: (idToUpdate: number) => void;
+	updateTask: (idToUpdate: number, newName: string) => void;
 };
 
 export type ContextComponentProps = {

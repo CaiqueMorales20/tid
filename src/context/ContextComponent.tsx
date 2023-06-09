@@ -33,11 +33,11 @@ export const ContextComponent = ({ children }: ContextComponentProps) => {
 		);
 	};
 
-	const updateTask = (idToUpdate: number) => {
+	const updateTask = (idToUpdate: number, newName: string) => {
 		setTodoList(
 			todoList.map((item) => {
 				if (item.id === idToUpdate) {
-					return { ...item, name: "teste" };
+					return { ...item, name: newName };
 				}
 			})
 		);

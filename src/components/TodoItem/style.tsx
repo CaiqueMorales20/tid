@@ -11,6 +11,10 @@ export const ViewS = styled.View`
 	padding: 15px 20px;
 `;
 
+export const InputS = styled.TextInput`
+	color: #202124;
+`;
+
 export const TextS = styled.Text`
 	color: #202124;
 `;

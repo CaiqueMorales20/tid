@@ -1,8 +1,20 @@
 // Imports
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import {
+	NativeSyntheticEvent,
+	TextInputChangeEventData,
+	TextInputSubmitEditingEventData,
+} from "react-native";
 
 // Styled Components
-import { IconContainer, ImageS, PressableS, TextS, ViewS } from "./style";
+import {
+	IconContainer,
+	ImageS,
+	InputS,
+	PressableS,
+	TextS,
+	ViewS,
+} from "./style";
 
 // Types
 import { TodoItemProps } from "./types";
@@ -14,16 +26,40 @@ import { TodoContextProps } from "../../context/types";
 // Functional Component
 export const TodoItem = (props: TodoItemProps) => {
 	// Variables
+	const [renaming, setRenaming] = useState(false);
+	const [newName, setNewName] = useState("");
 	const { deleteTask, updateTask } = useContext(
 		TodoContext
 	) as TodoContextProps;
 
+	// Function
+	const onChange = (
+		e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
+	): void => {
+		const value = e.nativeEvent.text;
+		setNewName(value);
+	};
+
 	// Rendering
 	return (
 		<ViewS>
-			<TextS>{props.name}</TextS>
+			{renaming ? (
+				<InputS
+					autoFocus
+					placeholder={props.name}
+					defaultValue={props.name}
+					onChange={onChange}
+					onEndEditing={() => {
+						updateTask(props.id, newName);
+						console.log("nome", props.name);
+						console.log("editou");
+					}}
+				/>
+			) : (
+				<TextS>{props.name}</TextS>
+			)}
 			<IconContainer>
-				<PressableS onPress={() => updateTask(props.id)}>
+				<PressableS onPress={() => setRenaming(!renaming)}>
 					<ImageS source={require("../../assets/icons/edit.png")} />
 				</PressableS>
 				<PressableS onPress={() => deleteTask(props.id)}>
