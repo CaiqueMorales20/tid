@@ -1,6 +1,7 @@
 // Styled Components
-import { TodoS, TextS } from "./style";
+import { TodoS, Title } from "./style";
 import { TodoContent } from "../../components/TodoContent";
+import { StatusBar } from "expo-status-bar";
 
 // Functional Component
 export const Todo = () => {
@@ -9,7 +10,8 @@ export const Todo = () => {
 	// Rendering
 	return (
 		<TodoS>
-			<TextS>Todo</TextS>
+			<StatusBar backgroundColor="red" />
+			<Title>Things i Have To Do</Title>
 			<TodoContent />
 		</TodoS>
 	);

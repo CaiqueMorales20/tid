@@ -3,16 +3,16 @@ import styled from "styled-components/native";
 
 // Styled Components
 export const TodoS = styled.View`
-	background-color: #202124;
-	height: 90%;
-	width: 90%;
-	border-radius: 10px;
+	flex: 1;
 	align-items: center;
+	background-color: #202124;
+	border-radius: 10px;
 	padding: 40px 20px;
+	padding-top: 100px;
 	gap: 20px;
 `;
 
-export const TextS = styled.Text`
+export const Title = styled.Text`
 	color: #fefefe;
-	font-size: 14px;
+	font-size: 16px;
 `;

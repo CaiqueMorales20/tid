@@ -4,7 +4,6 @@ import styled from "styled-components/native";
 // Styled Components
 export const ViewS = styled.View`
 	flex-direction: row;
-	width: 100%;
 	justify-content: space-between;
 	align-items: center;
 	background-color: aliceblue;
