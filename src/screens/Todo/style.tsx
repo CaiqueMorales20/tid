@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 export const TodoS = styled.View`
 	flex: 1;
 	align-items: center;
-	background-color: #202124;
+	background-color: #3b3f4d;
 	border-radius: 10px;
 	padding: 40px 20px;
 	padding-top: 100px;

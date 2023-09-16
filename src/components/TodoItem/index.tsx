@@ -51,18 +51,13 @@ export const TodoItem = (props: TodoItemProps) => {
 					onChange={onChange}
 					onEndEditing={() => {
 						updateTask(props.id, newName);
-						setRenaming(false);
 					}}
 				/>
 			) : (
 				<TextS>{props.name}</TextS>
 			)}
 			<IconContainer>
-				<PressableS
-					onPress={() => {
-						setRenaming(true);
-					}}
-				>
+				<PressableS onPress={() => setRenaming(true)}>
 					<ImageS source={require("../../assets/icons/edit.png")} />
 				</PressableS>
 				<PressableS onPress={() => deleteTask(props.id)}>

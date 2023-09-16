@@ -1,5 +1,5 @@
 // Imports
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 // Types
 import { ContextComponentProps, TodoContextProps } from "./types";
@@ -42,6 +42,10 @@ export const ContextComponent = ({ children }: ContextComponentProps) => {
 			})
 		);
 	};
+
+	useEffect(() => {
+		console.log(todoList);
+	}, [todoList]);
 
 	// Rendering
 	return (
